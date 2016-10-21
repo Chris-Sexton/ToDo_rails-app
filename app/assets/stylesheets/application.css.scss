@@ -44,6 +44,10 @@ body {
     clear: both;
 }
 
+p.navbar-text.pull-right {
+  float: none;
+}
+
 #notice {
   text-align: center;
   font-size: 0.6em;

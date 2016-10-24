@@ -26,11 +26,11 @@ html {
 
 body {
   height: 100%;
-  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background: -webkit-linear-gradient(40deg, #4078c0 10%, #b2b2b2 100%);
+  background:    -moz-linear-gradient(40deg, #4078c0 10%, #b2b2b2 100%);
+  background:     -ms-linear-gradient(40deg, #4078c0 10%, #b2b2b2 100%);
+  background:      -o-linear-gradient(40deg, #4078c0 10%, #b2b2b2 100%);
+  background:         linear-gradient(40deg, #4078c0 10%, #b2b2b2 100%);
   font-family: 'Lato', sans-serif;
 }
 
@@ -44,8 +44,25 @@ body {
     clear: both;
 }
 
+
 p.navbar-text.pull-right {
   float: none;
+}
+
+a {
+  color: #3b3b3b;
+}
+
+a:hover.navbar-link {
+  color: black;
+}
+
+label[for="email"] {
+  color: #3b3b3b;
+}
+
+.actions {
+  margin-top: 8px;
 }
 
 #notice {
@@ -64,6 +81,7 @@ p.navbar-text.pull-right {
   -webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
   box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
   padding: 1em 0;
+  padding-left: 10px;
 }
 
 .todo_list_title {

@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users 
+  
   root "todo_lists#index"
 end

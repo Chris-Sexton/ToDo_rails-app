@@ -1,12 +1,19 @@
 class User < ActiveRecord::Base
+
+  enum role [:user, :editor, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable    
-  has_many :todo_items, through: :todo_lists
   has_many :todo_lists
 
-  validates :password,      :presence => true
+  validates :password, :presence => true
 
   def self.from_omniauth(auth)  
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

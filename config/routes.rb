@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  resources :users, only: [:index, :show]
   resources :todo_lists do
     resources :todo_items do
       member do

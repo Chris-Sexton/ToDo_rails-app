@@ -1,11 +1,18 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @users = User.all
+    authorize User
   end
 
   def show
     @user = User.find(params[:id])
-    redirect_to users_path, alert: "Access denied." unless current_user == @user
+    authorize @user
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    user.destroy
+    redirect_to users_path, :notic => "User deleted"
   end
 end

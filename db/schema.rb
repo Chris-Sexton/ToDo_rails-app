@@ -11,25 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109201151) do
-
-  create_table "UserLists", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "todo_list_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "assignments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "todo_list_id"
-    t.boolean  "request_accepted", default: false, null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-  end
-
-  add_index "assignments", ["todo_list_id"], name: "index_assignments_on_todo_list_id"
-  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id"
+ActiveRecord::Schema.define(version: 20161110195034) do
 
   create_table "todo_items", force: :cascade do |t|
     t.string   "content"
@@ -64,7 +46,7 @@ ActiveRecord::Schema.define(version: 20161109201151) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
-    t.integer  "role"
+    t.integer  "role",                   default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

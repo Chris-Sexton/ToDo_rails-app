@@ -15,10 +15,11 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    @current_user.admin?
   end
 
   def destroy?
-    user.admin?
+    return flase if @current_user == @user
+    @current_user.admin?
   end
 end
